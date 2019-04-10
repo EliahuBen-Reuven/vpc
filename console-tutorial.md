@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-03-10"
 
 keywords: create, configure, permissions, ACL, virtual, server, instance, subnet, block, storage, volume, security, group, images, Windows, Linux, example, monitoring, VPN, load balancer, IKE, IPsec
 
@@ -48,7 +48,7 @@ If you plan to create a load balancer and use HTTPs for the listener, an SSL cer
 To create a VPC and subnet:
 
 1. Open [{{site.data.keyword.cloud_notm}} console ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}){: new_window}
-1. Click **Menu icon ![Menu icon](../../icons/icon_hamburger.svg) > VPC Infrastructure > Network > VPC and subnets** and click **New virtual private cloud**.
+1. Click **Menu icon ![Menu icon](../../icons/icon_hamburger.svg) > VPC Infrastructure > Network > VPC** and click **New virtual private cloud**.
 1. Enter a name for the VPC, such as `my-vpc`.
 1. Select a resource group for the VPC and all its attached resources. Resource groups enable you to organize your account resources for access control and billing purposes. For more information, see [Best practices for organizing resources in a resource group](/docs/resources?topic=resources-bp_resourcegroups).
 1. _Optional:_ Enter tags to help you organize and find your resources. You can add more tags later. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
@@ -78,7 +78,7 @@ Each subnet can be attached to only one ACL. However, each ACL can be attached t
 
 To configure the ACL:
 
-1. On the VPC and subnets page, click the **Subnets** tab.
+1. Click **Network > Subnets**.
 1. Click the subnet that you created.
 1. In the **Subnet details** area, click the name of the ACL.
 1. Click **Add rule** to configure inbound and outbound rules that define what traffic is allowed in or out of the subnet. For each rule, specify the following information:  
@@ -135,7 +135,7 @@ You can create a block storage volume and attach it to your virtual server insta
 To create and attach a block storage volume:
 
 1. In the navigation pane, click **Storage > Block storage volumes**.
-1. On the Block storage volumes for VPC page, click **New volume** and specify the following information.
+1. Click **New volume** and specify the following information.
   * **Name**: Enter a name for the block storage volume, such as `data-volume-1`.  
   * **Resource group**: Select a resource group for the block storage volume. Resource groups enable you to organize your account resources for access control and billing purposes. For more information, see [Best practices for organizing resources in a resource group](/docs/resources?topic=resources-bp_resourcegroups).
   * **Tags**: _Optional:_ Enter tags to help you organize and find your resources. You can add more tags later. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
@@ -153,7 +153,8 @@ You can configure the security group to define the inbound and outbound traffic 
 
 To configure the security group:
 
-1. On the Virtual server instances page, click your instance to view its details.
+1. In the navigation pane, click **Compute > Virtual server instances**.
+1. Click your instance to view its details.
 1. In the **Network interfaces** section, click the security group.
 1. Click **Add rule** to configure inbound and outbound rules that define what type of traffic is allowed to and from the instance. For each rule, specify the following information:  
    * Specify a CIDR block or IP address for the permitted traffic. Alternatively, you can specify a security group in the same VPC to allow traffic to or from all instances attached to the selected security group.   
@@ -185,7 +186,8 @@ Your instance must be running before you can associate a floating IP address. It
 
 To reserve and associate a floating IP address:
 
-1. On the Virtual server instances page, click your instance to view its details.
+1. In the navigation pane, click **Compute > Virtual server instances**.
+1. Click your instance to view its details.
 1. In the **Network interfaces** section, click **Reserve** for the interface that you want to associate with a floating IP address.
 
 If you later want to reassign this floating IP address to another instance in the same zone, find the floating IP address on the **Network > Floating IPs** page, click its overflow menu (**...**), and click **Unassociate**. Then, click  **Associate** to select the instance and network interface that you want to associate with the floating IP address.
@@ -238,7 +240,7 @@ You can create a load balancer to distribute inbound traffic across multiple ins
 
 To create a load balancer:
 1. In the navigation pane, click **Network > Load balancers**.
-1. On the Load balancers page, click **New load balancer** and specify the following information.
+1. Click **New load balancer** and specify the following information.
     * **Name**: Enter a name for the load balancer, such as `my-load-balancer`.
     * **Virtual private cloud**: Select your VPC.
     * **Resource group**: Select a resource group for the load balancer.
@@ -283,7 +285,7 @@ To create a load balancer:
    * **SSL certificate**: If HTTPS is the selected protocol for this listener, you must select an SSL certificate. Make sure the load balancer is authorized to access the SSL certificate. For instructions, see [Before you begin](#before).
 1. Click **Create**.
 1. After you finish creating pools and listeners, click **Create load balancer**.
-1. To view details of an existing load balancer, click the name of your load balancer on the **Load balancers** page.
+1. To view details of an existing load balancer, click the name of the load balancer on the **Network > Load balancers** page.
 
 ## Creating a VPN
 You can create a virtual private network (VPN) so your VPC can connect securely to another private network, such as an on-premises network or another VPC.
@@ -293,7 +295,7 @@ To view a code example, see [Using VPN with your VPC](/docs/infrastructure/vpc-n
 
 To create a VPN:
 1. In the navigation pane, click **Network > VPNs**.
-1. On the VPN page, click **New VPN gateway** and specify the following information:
+1. Click **New VPN gateway** and specify the following information:
     * **Name**: Enter a name for the VPN gateway in your virtual private cloud, such as `my-vpn-gateway`.
     * **Virtual private cloud**: Select your VPC.
     * **Resource group**: Select a resource group for the VPN.
